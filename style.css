@@ -5,7 +5,7 @@ body {
 
 h1 {
   padding: 8px;
-  background: rgba(255, 0, 0, 0.8);
+  background: rgba(22, 1, 142, 0.8);
   border-radius: 8px;
   margin: 0;
   font-size: 64px;
@@ -90,7 +90,7 @@ textarea:focus {
 
 nav {
   height: 72px;
-  background: #202125;
+  background: #111111;
   width: 100%;
   margin: 0;
   position: fixed;
@@ -111,7 +111,7 @@ nav a {
 
 nav a:hover {
   text-decoration: none;
-  color: red;
+  color: blue;
 }
 
 nav ul {
@@ -129,7 +129,7 @@ nav ul {
 
 #logo-img {
   display: flex;
-  height: 100%;
+  height: 40%;
   background: #111;
   padding: 0 32px;
   align-items: center;
@@ -138,7 +138,7 @@ nav ul {
 }
 
 #logo-img img {
-  height: 100px;
+  height: 50px;
 }
 
 #logo-img:hover {
@@ -164,7 +164,7 @@ nav ul {
 }
 
 #search-icon:hover {
-  color: red;
+  color: blue;
 }
 
 /* Slideout Menu */
@@ -225,7 +225,7 @@ section {
 
 .section-heading:hover {
   padding: 4px 48px;
-  background: red;
+  background: blue;
 }
 
 /* Section Source */
@@ -254,15 +254,21 @@ section {
   padding: 0 8px;
 }
 
+.card .card-description-policy {
+  padding: 40px;
+  border:  3px solid black;
+  text-align: center;
+}
+
 .card-meta-blogpost{
-  color:#333;
+  color:rgba(22, 1, 142, 0.8);
   font-size:14px;
   padding: 16px;
   font-family:'Roboto Slab', serif;
 }
 
 .card-meta-blogpost a{
-  color:#333;
+  color:rgba(22, 1, 142, 0.8);
 }
 
 /* Button Read more */
@@ -280,7 +286,7 @@ section {
 }
 
 .btn-readmore:hover {
-  background: red;
+  background: blue;
   text-decoration: none;
   padding: 8px 64px 8px 24px;
   color: white;
@@ -301,7 +307,7 @@ footer a {
 
 footer #left-footer {
   flex: 1;
-  border-right: 1px solid red;
+  border-right: 1px solid blue;
   padding-left: 32px;
 }
 
@@ -338,7 +344,7 @@ footer #social-media-footer ul li {
 }
 
 footer #social-media-footer ul li:hover a .fa-youtube {
-  color: red;
+  color: blue;
 }
 
 footer #social-media-footer ul li:hover a .fa-facebook {
@@ -364,7 +370,7 @@ footer #social-media-footer ul li:hover a .fa-github {
 
 .page-heading:hover{
   padding:4px 48px;
-  background:red;
+  background:blue;
 }
 
 .card-meta{
@@ -424,10 +430,19 @@ footer #social-media-footer ul li:hover a .fa-github {
 #sidebar{
   background:#333;
   flex:1;
+  float: right;
+  margin: 50px;
   padding: 8px 16px;
   color:white;
   box-shadow: inset 27px 0 51px -18px rgba(0,0,0,0.75);
 }
+
+
+#sidebar img {
+  width: 300px;
+  height: 200px;
+}
+
 
 /* Comments section */
 
@@ -526,7 +541,8 @@ footer #social-media-footer ul li:hover a .fa-github {
   }
 
   #logo-img {
-    padding: 0;
+    max-width: 70%;
+    height: 70%;
   }
 }
 
