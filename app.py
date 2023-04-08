@@ -1,14 +1,15 @@
 from flask import Flask, render_template
 import os
+from forms import RegistrationForm, LoginForm
 
 app = Flask(__name__)
 
+app.config['SECRET_KEY'] = 'hdaLSDHAILSDHADKLA129412748'
+
 img = os.path.join('static', 'img')
 
-@app.route('/')
-def home():
-    return render_template('index.html')
 
+@app.route('/')
 @app.route('/index.html')
 def homeindex():
     return render_template('index.html')
@@ -40,6 +41,16 @@ def policy():
 app.route('/contact.html')
 def contact():
     return render_template('contact.html')
+
+app.route("/register")
+def register():
+    form = RegistrationForm()
+    return render_template('register.html', title = 'Register', form = form)
+
+app.route("/login")
+def register():
+    form = LoginForm()
+    return render_template('login.html', title = 'Login', form = form)
 
 if __name__ == '__main__':
     app.run(debug=True)
