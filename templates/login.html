@@ -47,25 +47,26 @@
     </div>
 
     <body>
-        <form>
+        <form action=login.html method="post">
                 <div class="field-name">
                      <i class="fas fa-user"></i>
-                     <input autocomplete="off" type="text" placeholder="Username" required>
+                     <input autocomplete="off" type="text" placeholder="Username" id="username" name = "username" required>
                      <i class="fas fa-arrow-down"></i>
                  </div>
                  <div class="field-email innactive">
                      <i class="fas fa-mail-bulk"></i>
-                     <input autocomplete="off" type="email" placeholder="Email" required>
+                     <input autocomplete="off" type="email" placeholder="Email" id="email" name="email" required>
                      <i class="fas fa-arrow-down"></i>
                  </div>
                  <div class="field-password innactive">
                      <i class="fas fa-key"></i>
-                     <input autocomplete="off" type="password" placeholder="Password" required>
+                     <input autocomplete="off" type="password" placeholder="Password" id="password" name="password" required>
                      <i class="fas fa-arrow-down"></i>
                  </div>
                  <div class="field-finish innactive">
                      <i class="fas fa-kiss-wink-heart"></i>
                      <p>Thanks for using</p>
+                     <button type="submit" class="btn btn-primary">Login</button>
                      <i class="fas fa-kiss-wink-heart"></i>
                  </div>
          </form>
