@@ -1,7 +1,7 @@
 # Proiect e-startup
 
 # Andrei
--link-uri de start-up 
+- link-uri de start-up 
 -front-end (logo, text, viziune)
 -partea teoretica
 -partea practica(un proeict practic asemanator)
