@@ -1,6 +1,6 @@
 # Proiect e-startup
 
-#Andrei
+# Andrei
 -link-uri de start-up 
 -front-end (logo, text, viziune)
 -partea teoretica
@@ -8,7 +8,7 @@
 -capturi de ecran in etape
 -grafic pentru componente legale, juridice, economice si comerciale.
 
-#Darius
+# Darius
 -backend(db+login)
 -search button 
 -partea teoretica
