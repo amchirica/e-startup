@@ -71,3 +71,20 @@ div.active {
         transform: translate(-50%,-50%) rotate(0deg);
     }
 }
+
+/* submit */
+
+.btn {
+    background-color: rgb(37, 89, 61);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-left: 15px;
+  }
+  
+  .btn:hover {
+    background-color: rgb(37, 89, 61);
+  }
+  

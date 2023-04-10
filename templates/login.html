@@ -17,34 +17,49 @@
 
 <body>
 
-    <nav>
-        <div id="logo-img">
-            <a href="index.html">
-                <br><br>
-                <img src="/static/img/logo_prim1.png">
-            </a>
-        </div>
-        <div id="menu-icon">
-            <i class="fas fa-bars"></i>
-        </div>
+    <div id="slideout-menu">
         <ul>
             <li>
-                <a class="active" href="login.html">Login</a>
+                <a href="login.html">Login</a>
             </li>
             <li>
                 <a href="index.html">Home</a>
             </li>
             <li>
-                <div id="search-icon">
-                    <i class="fas fa-search"></i>
-                </div>
+                <input type="text" placeholder="Search Here">
             </li>
         </ul>
-    </nav>
+    </div>
+
+  <nav>
+      <div id="logo-img">
+        <a href="index.html">
+            <br><br>
+            <img src="/static/img/logo_prim1.png">
+        </a>
+      </div>
+      <div id="menu-icon">
+          <i class="fas fa-bars"></i>
+      </div>
+      <ul>
+          <li>
+              <a href="login.html">Login</a>
+          </li>
+          <li>
+            <a href="index.html">Home</a>
+        </li>
+          <li>
+              <div id="search-icon">
+                  <i class="fas fa-search"></i>
+              </div>
+          </li>
+      </ul>
+  </nav>
 
     <div id="searchbox">
         <input type="text" placeholder="Search Here">
     </div>
+
 
     <body>
         <form action=login.html method="post">
@@ -66,9 +81,10 @@
                  <div class="field-finish innactive">
                      <i class="fas fa-kiss-wink-heart"></i>
                      <p>Thanks for using</p>
-                     <button type="submit" class="btn btn-primary">Login</button>
                      <i class="fas fa-kiss-wink-heart"></i>
+                     <button type="submit" class="btn btn-primary">Login</button>
                  </div>
+
          </form>
      
          <script src="/static/script_login.js"></script>

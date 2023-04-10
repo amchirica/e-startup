@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
+        crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed|Roboto+Slab" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="/static/style_register.css">
+    <!-- Favicon -->
+    <link href="/static/img/favicon.ico" rel="icon">
+    <title>E-Startup Design</title>
+</head>
+
+<body>
+    <div id="slideout-menu">
+        <ul>
+
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+            <li>
+                <a href="register.html">Register</a>
+            </li>
+            <li>
+                <a href="{{ url_for('logout') }}"> Logout</a>
+            </li>
+        </ul>
+    </div>
+
+    <nav>
+        <div id="logo-img">
+            <a href="index.html">
+                <br><br>
+                <img src="/static/img/logo_prim1.png">
+            </a>
+        </div>
+        <div id="menu-icon">
+            <i class="fas fa-bars"></i>
+        </div>
+        <ul>
+
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+            <li>
+                <a href="register.html">Register</a>
+            </li>
+            <li>
+                <a href="{{ url_for('logout') }}"> Logout</a>
+            </li>
+            <li>
+                <div id="search-icon">
+                    <i class="fas fa-search"></i>
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+    <div id="searchbox">
+        <input type="text" placeholder="Search Here">
+    </div>
+
+
+    <body>
+        <header>
+            <h1>E-Startup Design</h1>
+        </header>
+
+            <section class="intro">
+                <h2>Complete the following row</h2>
+                <p>#user_experience</p>
+            </section>
+            <div class="container">
+            <form action=user.html method="post">      
+                <!-- Contact information -->
+                <fieldset>
+                    <legend>{{session['name']}}</legend>
+                    <div class="form-box">
+                    <!-- project -->
+                        <label for="project">Project</label>
+                        <input required type="text" id="project" name="user_project" placeholder="Required"><br>
+                    </div>
+
+                    <div class="form-box">
+                        <!-- Phone -->
+                        <label for="phone">Phone number</label>
+                        <input required type="text" id="phone" name="user_phone" placeholder="Required"><br>
+                    </div>
+                    <div class="form-box">
+                        <!-- Budget -->
+                        <label for="budget">Budget</label>
+                        <input required type="text" id="budget" name="user_budget" placeholder="Required"><br>
+                    </div>
+                    <div class="form-box">
+                        <!-- Tehnology -->
+                        <label for="tehnology">Tehnology</label>
+                        <select id="tehnology" name="user_tehnology" >
+                            <option>Java+spring</option>
+                            <option>Python+flask</option>
+                            <option>C#</option>
+                            <option>PHP</option>
+                        </select><br>
+                    </div>
+
+
+                <!-- News-->
+                <fieldset>
+                    <legend>Ultimele noutati</legend>
+                    <!-- news -->
+                    <label>Selecteaza ceea ce ai dori sa afli</label>  
+                    <input type="checkbox" id="fonds_news" value="newsletter_fonds" name="user_newsletter"><label class="light" for="fonds_news">Fonduri si proiecte</label><br>
+                    <input type="checkbox" id="colabs_news" value="newsletter_colabs" name="user_newsletter"><label class="light" for="colabs_news">Colaborari</label><br>
+                    <!-- message -->
+                    <br>
+                    <label>Formatul mesajului</label>  
+                    <input type="radio" id="format_mail" value="mail_format" name="user_format"><label class="light"  for="format_mail">Mail</label><br>
+                    <input type="radio" id="format_call" value="call_format" name="user_format"><label class="light" for="format_call">Phone call</label><br>
+                    <br>
+                    <!-- Submit the form -->
+                    <button type="submit">Inregistreaza proiect</button>
+                </fieldset> 
+
+                <!-- User info -->
+                    <fieldset>
+                        <legend>Proiecte client:</legend>
+                            {% for project in message%}
+
+                            <div class="form-box">
+                            <!-- Project info -->
+                                <label for="project-info">Project info</label>
+                                <input required type="text" id="project-info" name="user_project-info" value = {{project['name']}}><br>
+                            </div>
+                
+                            <div class="form-box">
+                                <!-- Budget -->
+                                    <label for="budget-info">Budget</label>
+                                    <input required type="text" id="budget-info" name="user_budget-info" value = {{project['cost']}}><br>
+                            </div>
+   
+                            <div class="form-box">
+                                <!-- Tehnology -->
+                                    <label for="tehnology-info">Tehnology</label>
+                                    <input required type="text" id="tehnology-info" name="user_tehnology-info" value = {{project['t.name']}}><br>
+                            </div>
+                            {%endfor%}
+                    </fieldset>    
+            </form>
+            <br><br>
+            <p style="margin-bottom:10px">© 2023 Acest site este dezvoltat de E-Startup Design.</p>
+        </div>
+    </body>
+
+    <script src="/static/main.js"></script>
+</body>
+
+</html>

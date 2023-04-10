@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
+        crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed|Roboto+Slab" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="/static/style_register.css">
+    <!-- Favicon -->
+    <link href="/static/img/favicon.ico" rel="icon">
+    <title>E-Startup Design</title>
+</head>
+
+<body>
+    <div id="slideout-menu">
+        <ul>
+
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+            <li>
+                <a href="blog.html">Blog</a>
+            </li>
+            <li>
+                <a href="project.html">Projects</a>
+            </li>
+            <li>
+                <a href="about.html">About</a>
+            </li>
+            <li>
+                <a href="register.html">Register</a>
+            </li>
+            <li>
+                <a href="login.html">Login</a>
+            </li>
+        </ul>
+    </div>
+
+    <nav>
+        <div id="logo-img">
+            <a href="index.html">
+                <br><br>
+                <img src="/static/img/logo_prim1.png">
+            </a>
+        </div>
+        <div id="menu-icon">
+            <i class="fas fa-bars"></i>
+        </div>
+        <ul>
+
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+            <li>
+                <a href="blog.html">Blog</a>
+            </li>
+            <li>
+                <a href="project.html">Projects</a>
+            </li>
+            <li>
+                <a href="about.html">About</a>
+            </li>
+            <li>
+                <a class="active" href="register.html">Register</a>
+            </li>
+            <li>
+                <a href="login.html">Login</a>
+            </li>
+            <li>
+                <div id="search-icon">
+                    <i class="fas fa-search"></i>
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+    <div id="searchbox">
+        <input type="text" placeholder="Search Here">
+    </div>
+
+    <body>
+        <header>
+            <h1>E-Startup Design</h1>
+        </header>
+
+            <section class="intro">
+                <h2>Register in our work</h2>
+                <p>#pentru a avea acces la noile informații</p>
+            </section>
+            <div class="container">
+            <form>
+                <!-- Register -->
+                <fieldset>
+                    <legend>Register as partner</legend>
+                    <div class="form-box">
+                    <!-- Full Name -->
+                        <label for="name">Full name</label>
+                        <input required type="text" id="name" name="user_name" placeholder="Required"><br>
+                    </div>
+                    <div class="form-box">
+                        <!-- Email Address -->
+                        <label for="email">Email Address</label>
+                        <input required type="text" id="email" name="user_email" placeholder="Required"><br>
+                    </div>
+                    <div class="form-box">
+                        <!-- Phone -->
+                        <label for="phone">Phone number</label>
+                        <input required type="text" id="phone" name="user_phone" placeholder="Required"><br>
+                    </div>
+                    <div class="form-box">
+                        <!-- City -->
+                        <label for="city">City</label>
+                        <input required type="text" id="city" name="user_city" placeholder="Required"><br>
+                    </div>
+                    <div class="form-box">
+                        <!-- Tehnology -->
+                        <label for="tehno">Tehnologia</label>
+                        <select id="tehno" name="user_tehno" >
+                            <option>Choose State</option>
+                            <option>Website</option>
+                            <option>Aplicatie mobilă</option>
+                            <option>Web+Mobile</option>
+                            <option>Baze de date</option>
+                        </select><br>
+                    </div>
+                    <!-- Submit the form -->
+                    <button type="submit">Sign Up</button>
+                </fieldset>
+                
+            </form>
+            <p style="margin-bottom:10px">© 2023 Acest site este dezvoltat de E-Startup Design.</p>
+        </div>
+    </body>
+        
+
+    <script src="/static/main.js"></script>
+</body>
+
+</html>
