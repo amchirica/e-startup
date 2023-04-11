@@ -13,7 +13,7 @@ app.config['MYSQL_DB'] = 'estartup'
 mysql = MySQL(app)
 
 @app.route('/')
-@app.route('/index')
+@app.route('/home')
 def homeindex():
     return render_template('index.html')
 
