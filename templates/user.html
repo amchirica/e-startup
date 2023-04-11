@@ -20,7 +20,7 @@
         <ul>
 
             <li>
-                <a href="index.html">Home</a>
+                <a href="index">Home</a>
             </li>
             <li>
                 <a href="{{ url_for('logout') }}"> Logout</a>
@@ -30,7 +30,7 @@
 
     <nav>
         <div id="logo-img">
-            <a href="index.html">
+            <a href="index">
                 <br><br>
                 <img src="/static/img/logo_prim1.png">
             </a>
@@ -41,7 +41,7 @@
         <ul>
 
             <li>
-                <a href="index.html">Home</a>
+                <a href="index">Home</a>
             </li>
             <li>
                 <a href="{{ url_for('logout') }}"> Logout</a>
@@ -69,7 +69,7 @@
                 <p>#user_experience</p>
             </section>
             <div class="container">
-            <form action=user.html method="post">      
+            <form action=user method="post">      
                 <!-- Contact information -->
                 <fieldset>
                     <legend>{{session['name']}}</legend>

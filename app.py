@@ -13,32 +13,32 @@ app.config['MYSQL_DB'] = 'estartup'
 mysql = MySQL(app)
 
 @app.route('/')
-@app.route('/index.html')
+@app.route('/index')
 def homeindex():
     return render_template('index.html')
 
-@app.route('/blog.html')
+@app.route('/blog')
 def blog():
     return render_template('blog.html')
 
-@app.route('/about.html')
+@app.route('/about')
 def about():
     return render_template('about.html')
 
 
-@app.route('/project.html')
+@app.route('/project')
 def project():
     return render_template('project.html')
 
-@app.route('/policy.html')
+@app.route('/policy')
 def policy():
     return render_template('policy.html')
 
-@app.route('/contact.html')
+@app.route('/contact')
 def contact():
     return render_template('contact.html')
 
-@app.route('/login.html', methods =['GET', 'POST'])
+@app.route('/login', methods =['GET', 'POST'])
 def login():
 
     if request.method == 'POST' and 'username' in request.form and 'password' in request.form:
@@ -58,27 +58,27 @@ def login():
             session['name'] = client['accountname']
             session['email'] = client['email']
             mesage = 'Logged in successfully !'
-            return redirect('user.html')
+            return redirect('user')
         elif username == 'admin' and password == 'admin':
             return render_template('blog.html')
         else:
             mesage = 'Please enter correct email / password !'
     
     if session.get("name"):
-        return redirect('user.html')
+        return redirect('user')
     else:
         return render_template('login.html')
 
 
-@app.route('/register.html')
+@app.route('/register')
 def register():
     return render_template('register.html')
 
-@app.route('/admin.html')
+@app.route('/admin')
 def admin():
     return render_template('admin.html')
 
-@app.route('/user.html', methods =['GET', 'POST'])
+@app.route('/user', methods =['GET', 'POST'])
 def user():
     cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
     if request.method == 'POST':
