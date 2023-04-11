@@ -1,12 +1,14 @@
+create schema estartup;
+
 create table clients(
 	clientid int not null primary key auto_increment unique,
     employeeid int,
+	password varchar(40) unique,
     name varchar(40),
     surname varchar(40),
     email varchar(40),
     phone varchar(40),
-    accountname varchar(40),
-    password varchar(40)
+    accountname varchar(40)
 );
 
 create table projects(
@@ -41,3 +43,25 @@ alter table projects add constraint fk1 foreign key(clientid) references clients
 alter table technologies add constraint fk2 foreign key(projectid) references projects(projectid) on delete cascade on update cascade;
 alter table clients add constraint fk3 foreign key(employeeid) references employee(employeeid) on delete cascade on update cascade;
 
+insert into employee (name,budget) values('angajat1',2000);
+insert into clients (employeeid,password ,name,surname,email,phone,accountname) values('1','client','Darius','Manolescu','manoles@yahoo.com','1234','clien1');
+insert into clients (employeeid,password ,name,surname,email,phone,accountname) values('1','client2','Andrei','Chirica','chirica@yahoo.com','12345','client2');
+
+insert into organisation(adminpassword, adminname, name, type, financialdata) values ('admin','admin','eStartUp','SRL','1000'); 
+
+table clients;
+table organisation;
+table projects;
+table technologies;
+
+
+select 
+	p.name,
+    p.cost,
+    t.name
+from clients c inner join 
+projects p on(c.clientid = p.clientid)
+inner join 
+technologies t on(t.projectid = p.projectid)
+where c.clientid = 4;
+	
