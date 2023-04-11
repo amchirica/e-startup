@@ -30,13 +30,17 @@
             <li>
                 <a href="about.html">About</a>
             </li>
-            <li>
+            <li>  {%if session['loggedin'] == True%}
+                {%else%}
                 <a href="register.html">Register</a>
+                {%endif%}
             </li>
-            <li>
+            <li>{%if session['loggedin'] == True%}
+                <a href="user.html"> {{session['name']}}</a>
+            {%else%}
                 <a href="login.html">Login</a>
-            </li>
-
+            {%endif%}
+        </li>
         </ul>
     </div>
 
@@ -64,11 +68,16 @@
             <li>
                 <a href="about.html">About</a>
             </li>
-            <li>
+            <li>  {%if session['loggedin'] == True%}
+                {%else%}
                 <a href="register.html">Register</a>
+                {%endif%}
             </li>
-            <li>
+            <li>{%if session['loggedin'] == True%}
+                <a href="user.html"> {{session['name']}}</a>
+            {%else%}
                 <a href="login.html">Login</a>
+            {%endif%}
             </li>
             <li>
                 <div id="search-icon">
@@ -312,8 +321,11 @@
                         <li>
                             <a href="contact.html">Contact</a>
                         </li>
-                        <li>
-                            <a href="login.html">Contact</a>
+                        <li>{%if session['loggedin'] == True%}
+                                <a href="user.html"> {{session['name']}}</a>
+                            {%else%}
+                                <a href="login.html">Login</a>
+                            {%endif%}
                         </li>
                     </ul>
                 </p>

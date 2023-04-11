@@ -30,11 +30,16 @@ crossorigin="anonymous">
           <li>
               <a href="about.html">About</a>
           </li>
-          <li>
+          <li>  {%if session['loggedin'] == True%}
+            {%else%}
             <a href="register.html">Register</a>
-          </li>
-          <li>
+            {%endif%}
+        </li>
+          <li>{%if session['loggedin'] == True%}
+            <a href="user.html"> {{session['name']}}</a>
+                {%else%}
             <a href="login.html">Login</a>
+                {%endif%}
           </li>
 
       </ul>
@@ -64,11 +69,16 @@ crossorigin="anonymous">
           <li>
               <a href="about.html">About</a>
           </li>
-          <li>
+          <li>  {%if session['loggedin'] == True%}
+            {%else%}
             <a href="register.html">Register</a>
-          </li>
-          <li>
+            {%endif%}
+        </li>
+          <li>{%if session['loggedin'] == True%}
+            <a href="user.html"> {{session['name']}}</a>
+                {%else%}
             <a href="login.html">Login</a>
+                {%endif%}
           </li>
           <li>
               <div id="search-icon">
