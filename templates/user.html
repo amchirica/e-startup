@@ -91,15 +91,21 @@
                     </div>
                     <div class="form-box">
                         <!-- Tehnology -->
-                        <label for="tehnology">Tehnology</label>
-                        <select id="tehnology" name="user_tehnology" >
+                        <label for="tehnology">Tehnology</label><br>
+                        <!--<select id="tehnology" name="user_tehnology" >
                             <option>Java+spring</option>
                             <option>Python+flask</option>
                             <option>C#</option>
                             <option>PHP</option>
                         </select><br>
+                    -->
+                        <input type="checkbox" id="Java+Spring" name="Java+Spring" value="Java+Spring">
+                        <label for="Java+Spring"> Java+Spring</label>
+                        <input type="checkbox" id="Python+Flask" name="Python+Flask" value="Python+Flask">
+                        <label for="Python+Flask"> Python+Flask</label>
+                        <input type="checkbox" id="C#+AspDoNet" name="C#+AspDotNet" value="C#+AspDotNet">
+                        <label for="C#+AspDotNet"> C#+AspDotnet</label><br>
                     </div>
-
 
                 <!-- News-->
                 <fieldset>
@@ -121,25 +127,26 @@
                 <!-- User info -->
                     <fieldset>
                         <legend>Proiecte client:</legend>
+                            {%set projectTemp = namespace(prev='')%}
                             {% for project in message%}
-
-                            <div class="form-box">
-                            <!-- Project info -->
-                                <label for="project-info">Project info</label>
-                                <input required type="text" id="project-info" name="user_project-info" value = {{project['name']}}><br>
-                            </div>
+                            {%if project['name'] !=  projectTemp.prev%}
+                            <legend><h3>{{project['name']}}</h3></legend>
                 
                             <div class="form-box">
                                 <!-- Budget -->
                                     <label for="budget-info">Budget</label>
                                     <input required type="text" id="budget-info" name="user_budget-info" value = {{project['cost']}}><br>
                             </div>
-   
                             <div class="form-box">
                                 <!-- Tehnology -->
                                     <label for="tehnology-info">Tehnology</label>
+                            </div>
+                            {%endif%}
+                            <div class="form-box">
+
                                     <input required type="text" id="tehnology-info" name="user_tehnology-info" value = {{project['t.name']}}><br>
                             </div>
+                            {%set projectTemp.prev = project['name']%}
                             {%endfor%}
                     </fieldset>    
             </form>

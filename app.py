@@ -87,19 +87,45 @@ def user():
         project = request.form['user_project']
         phone = request.form['user_phone']
         budget = request.form['user_budget']
-        technology = request.form['user_tehnology']
+        try:
+            technologyJava = request.form['Java+Spring']
+        except Exception:
+            pass
+        try:
+            technologyPython = request.form['Python+Flask']
+        except Exception:
+            pass
+        try:
+            technologyCsharp = request.form['C#+AspDotNet']
+        except Exception:
+            pass
+
         cursor.execute("insert into projects(clientid,name,cost) values(% s,% s,%s)",(int(session['userid']),project,float(budget),))
         mysql.connection.commit()
         
         #interogare tabela pentru a obtine idiul generat
         cursor.execute("select projectid from projects where name=%s",(project,))
-        projectid = cursor.fetchall()
-        print(projectid[0]['projectid'])
+        projectid = cursor.fetchone()
+        print(projectid['projectid'])
 
         
         #introducere in tabela technologies
-        cursor.execute("insert into technologies(projectid,name) values(% s,% s)",(projectid[0]['projectid'],technology,))
-        mysql.connection.commit()
+        try:
+            cursor.execute("insert into technologies(projectid,name) values(% s,% s)",(projectid['projectid'],technologyJava,))
+            mysql.connection.commit()        
+        except Exception:
+            pass
+        try:
+            cursor.execute("insert into technologies(projectid,name) values(% s,% s)",(projectid['projectid'],technologyPython,))
+            mysql.connection.commit()        
+        except Exception:
+            pass
+        try:
+            cursor.execute("insert into technologies(projectid,name) values(% s,% s)",(projectid['projectid'],technologyCsharp,))
+            mysql.connection.commit()        
+        except Exception:
+            pass
+
 
         #interogare tabela client, project, technologies
     sql_statement = "select\
@@ -123,7 +149,7 @@ def logout():
     session.pop('userid', None)
     session.pop('email', None)
     session.pop('name', None)
-    return redirect('login.html')
+    return redirect('login')
 
 if __name__ == '__main__':
     app.run(debug=True)
