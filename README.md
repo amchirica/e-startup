@@ -15,3 +15,4 @@
 -partea teoretica
 -partea practica(un proiect practic asemanator)
 -capturi de ecran in etape
+-a mers pullu
