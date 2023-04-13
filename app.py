@@ -8,7 +8,7 @@ app = Flask(__name__)
 app.secret_key = 'xyzsdfgqadasdads'
 app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = 'Abcd12!!'
+app.config['MYSQL_PASSWORD'] = 'Quartz1983'
 app.config['MYSQL_DB'] = 'estartup'
 mysql = MySQL(app)
 
@@ -46,18 +46,14 @@ def login():
         password = request.form['password']
         username = request.form["username"]
         cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-        #cursorOrg = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
         cursor.execute('SELECT * FROM clients WHERE accountname = % s AND password = % s', (username, password, ))
-        #cursorOrg.execute('SELECT * FROM clients WHERE email = % s AND password = % s', (username, password, ))
-        print(password == 'admin')
-        print(username == 'admin')
+        
         client = cursor.fetchone()
         if client:
             session['loggedin'] = True
             session['userid'] = client['clientid']
             session['name'] = client['accountname']
             session['email'] = client['email']
-            mesage = 'Logged in successfully !'
             return redirect('user')
         elif username == 'admin' and password == 'admin':
             return render_template('blog.html')
@@ -70,8 +66,34 @@ def login():
         return render_template('login.html')
 
 
-@app.route('/register')
+@app.route('/register',methods =['GET', 'POST'])
 def register():
+    if request.method == 'POST' and 'user_name' in request.form and 'user_password' in request.form and 'user_email' in request.form\
+        and 'user_surname' in request.form and 'user_phone' in request.form and 'account_name' in request.form:
+        name = request.form['user_name']
+        surname = request.form['user_surname']
+        account_name = request.form['account_name']
+        email = request.form['user_email']
+        phone = request.form['user_phone']
+        password = request.form['user_password']
+        cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+
+        try:
+            cursor.execute('insert into clients (employeeid,password,name,surname,email,phone,accountname) VALUES (% s, % s, % s, % s,% s, % s, % s)',\
+                (1, password, name,surname,email,phone,account_name, ))
+            mysql.connection.commit()
+            cursor.execute('SELECT * FROM clients WHERE accountname = % s AND password = % s', (account_name, password, ))
+            client = cursor.fetchone()
+            print(client)
+            if client:
+                session['loggedin'] = True
+                session['userid'] = client['clientid']
+                session['name'] = client['accountname']
+                session['email'] = client['email']
+                return redirect('user')
+        except Exception:
+            pass
+        
     return render_template('register.html')
 
 @app.route('/admin')

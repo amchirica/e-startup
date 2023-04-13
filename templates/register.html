@@ -102,41 +102,41 @@
                 <p>#pentru a avea acces la noile informații</p>
             </section>
             <div class="container">
-            <form>
+            <form action=register method="post">
                 <!-- Register -->
                 <fieldset>
                     <legend>Register as partner</legend>
                     <div class="form-box">
-                    <!-- Full Name -->
-                        <label for="name">Full name</label>
+                        <!-- Surname -->
+                            <label for="surname">Nume</label>
+                            <input required type="text" id="surname" name="user_surname" placeholder="Required"><br>
+                        </div>
+                    <div class="form-box">
+                    <!-- Surname -->
+                        <label for="name">Prenume</label>
                         <input required type="text" id="name" name="user_name" placeholder="Required"><br>
                     </div>
+                    <div class="form-box">
+                        <!-- Surname -->
+                            <label for="accountName">Account Name</label>
+                            <input required type="text" id="accountName" name="account_name" placeholder="Required"><br>
+                        </div>
                     <div class="form-box">
                         <!-- Email Address -->
                         <label for="email">Email Address</label>
                         <input required type="text" id="email" name="user_email" placeholder="Required"><br>
                     </div>
                     <div class="form-box">
+                        <!-- Email Address -->
+                        <label for="password">Parola</label>
+                        <input required type="password" id="password" name="user_password" placeholder="Required"><br>
+                    </div>
+                    <div class="form-box">
                         <!-- Phone -->
                         <label for="phone">Phone number</label>
                         <input required type="text" id="phone" name="user_phone" placeholder="Required"><br>
                     </div>
-                    <div class="form-box">
-                        <!-- City -->
-                        <label for="city">City</label>
-                        <input required type="text" id="city" name="user_city" placeholder="Required"><br>
-                    </div>
-                    <div class="form-box">
-                        <!-- Tehnology -->
-                        <label for="tehno">Tehnologia</label>
-                        <select id="tehno" name="user_tehno" >
-                            <option>Choose tehnology</option>
-                            <option>Website</option>
-                            <option>Aplicatie mobilă</option>
-                            <option>Web+Mobile</option>
-                            <option>Baze de date</option>
-                        </select><br>
-                    </div>
+
                     <!-- Submit the form -->
                     <button type="submit">Sign Up</button>
                 </fieldset>

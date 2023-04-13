@@ -25,7 +25,7 @@ const animatedForm = () => {
 }
 
 const validateUser = (user) =>{
-    if (user.value.length < 6) {
+    if (user.value.length < 2) {
         console.log('not enough characters)');
         error('rgb(189,87,87)');
     }else{
