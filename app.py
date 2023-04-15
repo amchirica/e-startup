@@ -56,14 +56,12 @@ def login():
             session['email'] = client['email']
             return redirect('user')
         elif username == 'admin' and password == 'admin':
-            return render_template('blog.html')
+            return redirect('admin')
         else:
             mesage = 'Please enter correct email / password !'
     
-    if session.get("name"):
-        return redirect('user')
-    else:
-        return render_template('login.html')
+
+    return render_template('login.html')
 
 
 @app.route('/register',methods =['GET', 'POST'])
