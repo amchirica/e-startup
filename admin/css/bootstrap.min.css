@@ -1,14 +1,22 @@
+<<<<<<< HEAD
+
+=======
 /*!
  * Bootstrap v5.0.0 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors
  * Copyright 2011-2021 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
+>>>>>>> aefad105ffc236504b81b65f5e13995867e5ee32
  :root {
     --bs-blue: #0d6efd;
     --bs-indigo: #6610f2;
     --bs-purple: #6f42c1;
+<<<<<<< HEAD
+    --bs-pink: #136f19;
+=======
     --bs-pink: #d63384;
+>>>>>>> aefad105ffc236504b81b65f5e13995867e5ee32
     --bs-red: #22ac07;
     --bs-orange: #fd7e14;
     --bs-yellow: #ffc107;
@@ -16,19 +24,33 @@
     --bs-teal: #20c997;
     --bs-cyan: #0dcaf0;
     --bs-white: #fff;
+<<<<<<< HEAD
+    --bs-gray: #ffffff;
+    --bs-gray-dark: #ffffff;
+=======
     --bs-gray: #6c757d;
     --bs-gray-dark: #343a40;
+>>>>>>> aefad105ffc236504b81b65f5e13995867e5ee32
     --bs-primary: #22ac07;
     --bs-secondary: #191c24;
     --bs-success: #198754;
     --bs-info: #0dcaf0;
     --bs-warning: #ffc107;
+<<<<<<< HEAD
+    --bs-danger: #35dc49;
+    --bs-light: #ffffff;
+    --bs-dark: #000;
+    --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.915), rgba(255, 255, 255, 0));
+=======
     --bs-danger: #dc3545;
     --bs-light: #6c7293;
     --bs-dark: #000;
     --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
     --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
+>>>>>>> aefad105ffc236504b81b65f5e13995867e5ee32
 }
 *,
 *::before,
@@ -46,10 +68,17 @@ body {
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
+<<<<<<< HEAD
+    color: #dedede;
+    background-color: #ffffff;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: rgba(92, 88, 88, 0);
+=======
     color: #6c7293;
     background-color: #000;
     -webkit-text-size-adjust: 100%;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+>>>>>>> aefad105ffc236504b81b65f5e13995867e5ee32
 }
 hr {
     margin: 1rem 0;
@@ -196,11 +225,19 @@ sup {
     top: -0.5em;
 }
 a {
+<<<<<<< HEAD
+    color: #16eb6b;
+    text-decoration: none;
+}
+a:hover {
+    color: #12bc34;
+=======
     color: #eb1616;
     text-decoration: none;
 }
 a:hover {
     color: #bc1212;
+>>>>>>> aefad105ffc236504b81b65f5e13995867e5ee32
 }
 a:not([href]):not([class]),
 a:not([href]):not([class]):hover {
@@ -230,7 +267,11 @@ pre code {
 }
 code {
     font-size: 0.875em;
+<<<<<<< HEAD
+    color: #33ced6;
+=======
     color: #d63384;
+>>>>>>> aefad105ffc236504b81b65f5e13995867e5ee32
     word-wrap: break-word;
 }
 a > code {
@@ -240,7 +281,11 @@ kbd {
     padding: 0.2rem 0.4rem;
     font-size: 0.875em;
     color: #fff;
+<<<<<<< HEAD
+    background-color: #b6b6b6;
+=======
     background-color: #212529;
+>>>>>>> aefad105ffc236504b81b65f5e13995867e5ee32
     border-radius: 0.2rem;
 }
 kbd kbd {
@@ -262,7 +307,11 @@ table {
 caption {
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
+<<<<<<< HEAD
+    color: #f6f6f6;
+=======
     color: #6c757d;
+>>>>>>> aefad105ffc236504b81b65f5e13995867e5ee32
     text-align: left;
 }
 th {
@@ -493,7 +542,11 @@ progress {
     margin-top: -1rem;
     margin-bottom: 1rem;
     font-size: 0.875em;
+<<<<<<< HEAD
+    color: #cbcbcb;
+=======
     color: #6c757d;
+>>>>>>> aefad105ffc236504b81b65f5e13995867e5ee32
 }
 .blockquote-footer::before {
     content: "\2014\00A0";
@@ -504,7 +557,11 @@ progress {
 }
 .img-thumbnail {
     padding: 0.25rem;
+<<<<<<< HEAD
+    background-color: #606060;
+=======
     background-color: #000;
+>>>>>>> aefad105ffc236504b81b65f5e13995867e5ee32
     border: 1px solid #dee2e6;
     border-radius: 5px;
     max-width: 100%;
@@ -1811,9 +1868,15 @@ progress {
     font-weight: 400;
     line-height: 1.5;
     color: #6c7293;
+<<<<<<< HEAD
+    background-color: #727272;
+    background-clip: padding-box;
+    border: 1px solid #404040;
+=======
     background-color: #000;
     background-clip: padding-box;
     border: 1px solid #000;
+>>>>>>> aefad105ffc236504b81b65f5e13995867e5ee32
     appearance: none;
     border-radius: 5px;
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
@@ -2432,7 +2495,11 @@ textarea.form-control.is-valid {
 }
 .was-validated .form-control:invalid,
 .form-control.is-invalid {
+<<<<<<< HEAD
+    border-color: #35bddc;
+=======
     border-color: #dc3545;
+>>>>>>> aefad105ffc236504b81b65f5e13995867e5ee32
     padding-right: calc(1.5em + 0.75rem);
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23dc3545'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23dc3545' stroke='none'/%3e%3c/svg%3e");
     background-repeat: no-repeat;
@@ -2441,7 +2508,11 @@ textarea.form-control.is-valid {
 }
 .was-validated .form-control:invalid:focus,
 .form-control.is-invalid:focus {
+<<<<<<< HEAD
+    border-color: #35dcd9;
+=======
     border-color: #dc3545;
+>>>>>>> aefad105ffc236504b81b65f5e13995867e5ee32
     box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.25);
 }
 .was-validated textarea.form-control:invalid,
@@ -2451,7 +2522,11 @@ textarea.form-control.is-invalid {
 }
 .was-validated .form-select:invalid,
 .form-select.is-invalid {
+<<<<<<< HEAD
+    border-color: #35dca4;
+=======
     border-color: #dc3545;
+>>>>>>> aefad105ffc236504b81b65f5e13995867e5ee32
 }
 .was-validated .form-select:invalid:not([multiple]):not([size]),
 .was-validated .form-select:invalid:not([multiple])[size="1"],
@@ -2465,16 +2540,28 @@ textarea.form-control.is-invalid {
 }
 .was-validated .form-select:invalid:focus,
 .form-select.is-invalid:focus {
+<<<<<<< HEAD
+    border-color: #35d1dc;
+=======
     border-color: #dc3545;
+>>>>>>> aefad105ffc236504b81b65f5e13995867e5ee32
     box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.25);
 }
 .was-validated .form-check-input:invalid,
 .form-check-input.is-invalid {
+<<<<<<< HEAD
+    border-color: #35cbdc;
+}
+.was-validated .form-check-input:invalid:checked,
+.form-check-input.is-invalid:checked {
+    background-color: #35bddc;
+=======
     border-color: #dc3545;
 }
 .was-validated .form-check-input:invalid:checked,
 .form-check-input.is-invalid:checked {
     background-color: #dc3545;
+>>>>>>> aefad105ffc236504b81b65f5e13995867e5ee32
 }
 .was-validated .form-check-input:invalid:focus,
 .form-check-input.is-invalid:focus {
@@ -2482,7 +2569,11 @@ textarea.form-control.is-invalid {
 }
 .was-validated .form-check-input:invalid ~ .form-check-label,
 .form-check-input.is-invalid ~ .form-check-label {
+<<<<<<< HEAD
+    color: #35c3dc;
+=======
     color: #dc3545;
+>>>>>>> aefad105ffc236504b81b65f5e13995867e5ee32
 }
 .form-check-inline .form-check-input ~ .invalid-feedback {
     margin-left: 0.5em;
@@ -2520,7 +2611,11 @@ textarea.form-control.is-invalid {
 .btn-check:focus + .btn,
 .btn:focus {
     outline: 0;
+<<<<<<< HEAD
+    box-shadow: 0 0 0 0.25rem rgba(22, 235, 228, 0.25);
+=======
     box-shadow: 0 0 0 0.25rem rgba(235, 22, 22, 0.25);
+>>>>>>> aefad105ffc236504b81b65f5e13995867e5ee32
 }
 .btn:disabled,
 .btn.disabled,
@@ -2543,7 +2638,11 @@ fieldset:disabled .btn {
     color: #fff;
     background-color: #22ac07;
     border-color: #22ac07;
+<<<<<<< HEAD
+    box-shadow: 0 0 0 0.25rem rgba(57, 217, 238, 0.5);
+=======
     box-shadow: 0 0 0 0.25rem rgba(238, 57, 57, 0.5);
+>>>>>>> aefad105ffc236504b81b65f5e13995867e5ee32
 }
 .btn-check:checked + .btn-primary,
 .btn-check:active + .btn-primary,
@@ -2559,7 +2658,11 @@ fieldset:disabled .btn {
 .btn-primary:active:focus,
 .btn-primary.active:focus,
 .show > .btn-primary.dropdown-toggle:focus {
+<<<<<<< HEAD
+    box-shadow: 0 0 0 0.25rem rgba(57, 220, 238, 0.5);
+=======
     box-shadow: 0 0 0 0.25rem rgba(238, 57, 57, 0.5);
+>>>>>>> aefad105ffc236504b81b65f5e13995867e5ee32
 }
 .btn-primary:disabled,
 .btn-primary.disabled {
