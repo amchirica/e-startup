@@ -139,8 +139,6 @@
     });
 
 
-<<<<<<< HEAD
-=======
     // Single Bar Chart
     var ctx4 = $("#bar-chart").get(0).getContext("2d");
     var myChart4 = new Chart(ctx4, {
@@ -209,7 +207,6 @@
         }
     });
 
->>>>>>> aefad105ffc236504b81b65f5e13995867e5ee32
     
 })(jQuery);
 
