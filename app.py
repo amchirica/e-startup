@@ -171,5 +171,21 @@ def logout():
     session.pop('name', None)
     return redirect('login')
 
+@app.route('/dashboard')
+def dashboard():
+    return render_template('dashboard.html')
+
+@app.route('/widget')
+def widget():
+    return render_template('widget.html')
+
+@app.route('/chart')
+def chart():
+    return render_template('chart.html')
+
+@app.route('/table')
+def table():
+    return render_template('table.html')
+
 if __name__ == '__main__':
     app.run(debug=True)
