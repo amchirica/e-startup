@@ -69,6 +69,23 @@
     var myChart1 = new Chart(ctx1, {
         type: "bar",
         data: {
+<<<<<<< HEAD
+            labels: ["2021", "2022", "2023"],
+            datasets: [{
+                    label: "RO",
+                    data: [15, 30, 55, 65, 60, 80, 95],
+                    backgroundColor: "red"
+                },
+                {
+                    label: "MD",
+                    data: [8, 35, 40, 60, 70, 55, 75],
+                    backgroundColor: "purple"
+                },
+                {
+                    label: "UK",
+                    data: [12, 25, 45, 55, 65, 70, 60],
+                    backgroundColor: "black"
+=======
             labels: ["2016", "2017", "2018", "2019", "2020", "2021", "2022"],
             datasets: [{
                     label: "USA",
@@ -84,6 +101,7 @@
                     label: "AU",
                     data: [12, 25, 45, 55, 65, 70, 60],
                     backgroundColor: "rgba(235, 22, 22, .3)"
+>>>>>>> aefad105ffc236504b81b65f5e13995867e5ee32
                 }
             ]
             },
@@ -98,6 +116,19 @@
     var myChart2 = new Chart(ctx2, {
         type: "line",
         data: {
+<<<<<<< HEAD
+            labels: ["2021", "2022", "2023"],
+            datasets: [{
+                    label: "Vanzari",
+                    data: [15, 30, 55, 45, 70, 65, 85],
+                    backgroundColor: "green",
+                    fill: true
+                },
+                {
+                    label: "Potential",
+                    data: [99, 235, 170, 30, 190, 380, 470],
+                    backgroundColor: "yellow",
+=======
             labels: ["2016", "2017", "2018", "2019", "2020", "2021", "2022"],
             datasets: [{
                     label: "Salse",
@@ -109,6 +140,7 @@
                     label: "Revenue",
                     data: [99, 135, 170, 130, 190, 180, 270],
                     backgroundColor: "rgba(235, 22, 22, .5)",
+>>>>>>> aefad105ffc236504b81b65f5e13995867e5ee32
                     fill: true
                 }
             ]
@@ -125,12 +157,21 @@
     var myChart3 = new Chart(ctx3, {
         type: "line",
         data: {
+<<<<<<< HEAD
+            labels: [5, 6, 7, 8, 9, 10, 8, 12, 13, 14, 10],
+            datasets: [{
+                label: "Conturi",
+                fill: false,
+                backgroundColor: "blue",
+                data: [5, 6, 7, 8, 9, 10, 8, 12, 13, 14, 10]
+=======
             labels: [50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150],
             datasets: [{
                 label: "Salse",
                 fill: false,
                 backgroundColor: "rgba(235, 22, 22, .7)",
                 data: [7, 8, 8, 9, 9, 9, 10, 11, 14, 14, 15]
+>>>>>>> aefad105ffc236504b81b65f5e13995867e5ee32
             }]
         },
         options: {
@@ -139,6 +180,8 @@
     });
 
 
+<<<<<<< HEAD
+=======
     // Single Bar Chart
     var ctx4 = $("#bar-chart").get(0).getContext("2d");
     var myChart4 = new Chart(ctx4, {
@@ -207,6 +250,7 @@
         }
     });
 
+>>>>>>> aefad105ffc236504b81b65f5e13995867e5ee32
     
 })(jQuery);
 
