@@ -56,7 +56,11 @@ def login():
             session['email'] = client['email']
             return redirect('user')
         elif username == 'admin' and password == 'admin':
-            return redirect('admin')
+            session['loggedin'] = True
+            session['userid'] = '0'
+            session['name'] = 'admin'
+            session['email'] = 'admin'
+            return redirect('dashboard')
         else:
             mesage = 'Please enter correct email / password !'
     
@@ -94,9 +98,6 @@ def register():
         
     return render_template('register.html')
 
-@app.route('/admin')
-def admin():
-    return render_template('admin.html')
 
 @app.route('/user', methods =['GET', 'POST'])
 def user():
@@ -173,7 +174,11 @@ def logout():
 
 @app.route('/dashboard')
 def dashboard():
-    return render_template('dashboard.html')
+    if session['name'] == 'admin':
+        cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+        cursor.execute("select * from employee")
+        employee = cursor.fetchall()
+        return render_template('dashboard.html',employee = employee)
 
 @app.route('/widget')
 def widget():
@@ -185,7 +190,32 @@ def chart():
 
 @app.route('/table')
 def table():
-    return render_template('table.html')
+    
+    cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
+    cursor.execute("select * from clients")
+    clients = cursor.fetchall()
+
+    cursor.execute("select * from employee")
+    employees = cursor.fetchall()
+    
+    inner_join_statement =\
+        "select\
+            e.surname,\
+            c.accountname,\
+            p.name,\
+            p.cost,\
+            t.name\
+        from employee e\
+        inner join\
+        clients c on(e.employeeid = c.employeeid)\
+        inner join\
+        projects p on(c.clientid = p.clientid)\
+        inner join\
+        technologies t on(t.projectid = p.projectid);"
+    cursor.execute(inner_join_statement)
+    inner_join_db = cursor.fetchall()
+
+    return render_template('table.html', clients = clients, employees = employees, inner_join_db = inner_join_db)
 
 if __name__ == '__main__':
     app.run(debug=True)
