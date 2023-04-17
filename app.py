@@ -81,7 +81,7 @@ def register():
         cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
         try:
             cursor.execute('insert into clients (employeeid,password,name,surname,email,phone,accountname) VALUES (% s, % s, % s, % s,% s, % s, % s)',\
-                (1, password, name,surname,email,phone,account_name, ))
+                (None, password, name,surname,email,phone,account_name, ))
             mysql.connection.commit()
             cursor.execute('SELECT * FROM clients WHERE accountname = % s AND password = % s', (account_name, password, ))
             client = cursor.fetchone()
@@ -105,7 +105,7 @@ def user():
         
         #introducere in tabela projects
         project = request.form['user_project']
-        phone = request.form['user_phone']
+        #phone = request.form['user_phone']
         budget = request.form['user_budget']
         try:
             technologyJava = request.form['Java+Spring']
@@ -178,11 +178,11 @@ def dashboard():
     if session['name'] == 'admin':
         cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
         cursor.execute("select * from employee")
-        data_from_client_form = {}
         employee = cursor.fetchall()
     
         cursor.execute("select * from clients")
         clients = cursor.fetchall()
+        
         if request.method == 'POST' and 'name' in request.form:
             name_employee = request.form['name']
             surname_employee = request.form['surname']
@@ -200,14 +200,37 @@ def dashboard():
                         mysql.connection.commit()
                     except Exception:
                         pass
-        print(data_from_client_form)          
         cursor.execute("select * from employee")
-        data_from_client_form = {}
         employee = cursor.fetchall()
         
         cursor.execute("select * from clients")
         clients = cursor.fetchall()
-        return render_template('dashboard.html',employee = employee,clients = clients)
+        
+        #data for org structure
+        org_structure = {}
+        cursor.execute("select count(employeeid) employees_number from employee")
+        employee_number = cursor.fetchone()
+        org_structure.update(employee_number)
+        
+        cursor.execute("select count(clientid) clients_number from clients")
+        clients_number = cursor.fetchone()
+        org_structure.update(clients_number)
+        
+        cursor.execute("select count(projectid) projects_number from projects")
+        projects_number = cursor.fetchone()
+        org_structure.update(projects_number)
+        
+        cursor.execute("select cast(sum(budget) as signed) total_budget from employee")
+        total_budget = cursor.fetchone()
+        org_structure.update(total_budget)
+        
+        cursor.execute("select cast(sum(cost) as signed) total_cost from projects")
+        total_cost = cursor.fetchone()
+        org_structure.update(total_cost)
+        
+        
+        print(org_structure)
+        return render_template('dashboard.html',employee = employee,clients = clients, org_structure = org_structure)
 
 @app.route('/widget')
 def widget():
@@ -227,6 +250,12 @@ def table():
     cursor.execute("select * from employee")
     employees = cursor.fetchall()
     
+    cursor.execute("select * from projects")
+    projects = cursor.fetchall()
+    
+    cursor.execute("select * from technologies")
+    technologies = cursor.fetchall()
+    
     inner_join_statement =\
         "select\
             e.surname,\
@@ -244,7 +273,7 @@ def table():
     cursor.execute(inner_join_statement)
     inner_join_db = cursor.fetchall()
 
-    return render_template('table.html', clients = clients, employees = employees, inner_join_db = inner_join_db)
+    return render_template('table.html', clients = clients, employees = employees, inner_join_db = inner_join_db,projects=projects,technologies = technologies)
 
 if __name__ == '__main__':
     app.run(debug=True)

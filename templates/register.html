@@ -36,12 +36,16 @@
                 <a href="register">Register</a>
                 {%endif%}
             </li>
-            <li>{%if session['loggedin'] == True%}
-                <a href="user"> {{session['name']}}</a>
-                    {%else%}
+            <li>  {%if session['loggedin'] == True%}
+                {%if session['name'] == 'admin'%}
+                    <a href="dashboard"> {{session['name']}}</a>
+                {%else%}
+                    <a href="user"> {{session['name']}}</a>
+                {%endif%}
+            {%else%}
                 <a href="login">Login</a>
-                    {%endif%}
-              </li>
+            {%endif%}
+      </li>
         </ul>
     </div>
 
@@ -74,12 +78,16 @@
                 <a href="register">Register</a>
                 {%endif%}
             </li>
-            <li>{%if session['loggedin'] == True%}
-                <a href="user"> {{session['name']}}</a>
-                    {%else%}
+            <li>  {%if session['loggedin'] == True%}
+                {%if session['name'] == 'admin'%}
+                    <a href="dashboard"> {{session['name']}}</a>
+                {%else%}
+                    <a href="user"> {{session['name']}}</a>
+                {%endif%}
+            {%else%}
                 <a href="login">Login</a>
-                    {%endif%}
-              </li>
+            {%endif%}
+      </li>
             <li>
                 <div id="search-icon">
                     <i class="fas fa-search"></i>

@@ -60,7 +60,6 @@
                 </div>
                 <div class="navbar-nav w-100">
                     <a href="dashboard" class="nav-item nav-link active"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
-                    <a href="widget" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Widgets</a>
                     <a href="table" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Tables</a>
                     <a href="chart" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Charts</a>
                 </div>
@@ -140,6 +139,8 @@
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
                             <a href="logout" class="dropdown-item">Log Out</a>
+                            <a href="home" class="dropdown-item">Home</a>
+
                         </div>
                     </div>
                 </div>
@@ -219,38 +220,30 @@
     
                     <div class="col-12">
                         <div class="bg-secondary rounded h-100 p-4">
-                            <h6 class="mb-4">Proiecte</h6>
+                            <h6 class="mb-4">Structura startup</h6>
                             <div class="table-responsive">
                                 <table class="table">
                                     <thead>
                                         <tr>
-                                            <th scope="col">Angajat</th>
-                                            <th scope="col">Client</th>
-                                            <th scope="col">Proiect</th>
-                                            <th scope="col">Cost</th>
-                                            <th scope="col">Tehnologii</th>
+                                            <th scope="col">Tip</th>
+                                            <th scope="col">Nr. Angajati</th>
+                                            <th scope="col">Nr. Client</th>
+                                            <th scope="col">Nr. Proiecte</th>
+                                            <th scope="col">Budget total</th>
+                                            <th scope="col">Venit brut</th>
                                         </tr>
                                     </thead>
-                                    {%set projectTemp = namespace(prev='')%}
-                                    {%for data in inner_join_db%}
-                                    {%if data['name'] !=  projectTemp.prev%}
                                     <tbody>
                                         <tr>
-                                            <td>{{data["surname"]}}</td>
-                                            <td>{{data["accountname"]}}</td>
-                                            <td>{{data["name"]}}</td>
-                                            <td>{{data["cost"]}}</td>
-                                            <td>{%for data2 in inner_join_db%}
-                                                {%if data2['name'] == data['name']%}
-                                                {{data2["t.name"]}}
-                                                {%endif%}
-                                                {%endfor%}
-                                            </td>
+                                            <td>SRL</td>
+                                            <td>{{org_structure['employees_number']}}</td>
+                                            <td>{{org_structure['clients_number']}}</td>
+                                            <td>{{org_structure['projects_number']}}</td>
+                                            <td>{{org_structure['total_budget']}}</td>
+                                            <td>{{org_structure['total_cost']}}</td>
+
                                         </tr>
                                     </tbody>
-                                    {%endif%}
-                                    {%set projectTemp.prev = data['name']%}
-                                    {%endfor%}
                                 </table>
                             </div>
                         </div>

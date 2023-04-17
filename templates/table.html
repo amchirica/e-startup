@@ -60,7 +60,6 @@
                 </div>
                 <div class="navbar-nav w-100">
                     <a href="dashboard" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
-                    <a href="widget" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Widgets</a>
                     <a href="table" class="nav-item nav-link active"><i class="fa fa-table me-2"></i>Tables</a>
                     <a href="chart" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Charts</a>
                 </div>
@@ -140,6 +139,8 @@
             </a>
             <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
                 <a href="logout" class="dropdown-item">Log Out</a>
+                <a href="home" class="dropdown-item">Home</a>
+
             </div>
         </div>
     </div>
@@ -182,6 +183,7 @@
                                 <thead>
                                     <tr>
                                         <th scope="col">#</th>
+                                        <th scope="col"># Angajat</th>
                                         <th scope="col">Username</th>
                                         <th scope="col">Nume</th>
                                         <th scope="col">Prenume</th>
@@ -193,6 +195,7 @@
                                 <tbody>
                                     <tr>
                                         <th scope="row">{{client['clientid']}}</th>
+                                        <td>{{client['employeeid']}}</td>
                                         <td>{{client['accountname']}}</td>
                                         <td>{{client['surname']}}</td>
                                         <td>{{client['name']}}</td>
@@ -204,11 +207,61 @@
                             </table>
                         </div>
                     </div>
+
+                    <div class="col-sm-12 col-xl-6">
+                        <div class="bg-secondary rounded h-100 p-4">
+                            <h6 class="mb-4">Proiecte</h6>
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col"># Client </th>
+                                        <th scope="col">Nume</th>
+                                        <th scope='col'>Cost</th>
+                                    </tr>
+                                </thead>
+                                {%for projects in projects%}
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">{{projects['projectid']}}</th>
+                                        <td>{{projects['clientid']}}</td>
+                                        <td>{{projects['name']}}</td>
+                                        <th>{{projects['cost']}}</td>
+                                    </tr>
+                                </tbody>
+                                {%endfor%}
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-12 col-xl-6">
+                        <div class="bg-secondary rounded h-100 p-4">
+                            <h6 class="mb-4">Tehnologii</h6>
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col"># Proiect</th>
+                                        <th scope="col">Nume</th>
+                                    </tr>
+                                </thead>
+                                {%for technologies in technologies%}
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">{{technologies['techid']}}</th>
+                                        <td>{{technologies['projectid']}}</td>
+                                        <td>{{technologies['name']}}</td>
+                                    </tr>
+                                </tbody>
+                                {%endfor%}
+                            </table>
+                        </div>
+                    </div>
                     
     
                     <div class="col-12">
                         <div class="bg-secondary rounded h-100 p-4">
-                            <h6 class="mb-4">Proiecte</h6>
+                            <h6 class="mb-4">Inner join tabele angajati, clienti, proiecte si tehnologii</h6>
                             <div class="table-responsive">
                                 <table class="table">
                                     <thead>
