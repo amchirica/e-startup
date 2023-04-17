@@ -79,7 +79,6 @@ def register():
         phone = request.form['user_phone']
         password = request.form['user_password']
         cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-
         try:
             cursor.execute('insert into clients (employeeid,password,name,surname,email,phone,accountname) VALUES (% s, % s, % s, % s,% s, % s, % s)',\
                 (1, password, name,surname,email,phone,account_name, ))
@@ -172,13 +171,43 @@ def logout():
     session.pop('name', None)
     return redirect('login')
 
-@app.route('/dashboard')
+@app.route('/dashboard',methods =['GET', 'POST'])
 def dashboard():
+    
+    
     if session['name'] == 'admin':
         cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
         cursor.execute("select * from employee")
+        data_from_client_form = {}
         employee = cursor.fetchall()
-        return render_template('dashboard.html',employee = employee)
+    
+        cursor.execute("select * from clients")
+        clients = cursor.fetchall()
+        if request.method == 'POST' and 'name' in request.form:
+            name_employee = request.form['name']
+            surname_employee = request.form['surname']
+            budget_employee = request.form['budget']
+            cursor.execute("insert into employee(name,surname,budget) values(%s,%s,%s);", (name_employee,surname_employee,budget_employee,))
+            mysql.connection.commit()
+        sql_statement = "UPDATE clients\
+                        SET employeeid = %s\
+                        WHERE clientid = %s;"
+        for client in clients:
+            if request.method == 'POST' and str(client['clientid']) in request.form:
+                if request.form[str(client['clientid'])] != "":
+                    try:
+                        cursor.execute(sql_statement, (request.form[str(client['clientid'])],client['clientid'],))
+                        mysql.connection.commit()
+                    except Exception:
+                        pass
+        print(data_from_client_form)          
+        cursor.execute("select * from employee")
+        data_from_client_form = {}
+        employee = cursor.fetchall()
+        
+        cursor.execute("select * from clients")
+        clients = cursor.fetchall()
+        return render_template('dashboard.html',employee = employee,clients = clients)
 
 @app.route('/widget')
 def widget():

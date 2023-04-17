@@ -170,7 +170,7 @@
                                     </tr>
                                     {%endfor%}
                                     <tr>
-                                        <th scope="row"><input type="text"  style="width: 35px"  id="email", name = "employeeid"/></th>
+                                        <th scope="row"></th>
                                         <td><input type="text" style="width: 70px"  id="email", name = "name"/></td>
                                         <td><input type="text"  style="width: 70px" id="email", name = "surname"/></td>
                                         <td><input type="text"  style="width: 70px"  id="email", name = "budget"/></td>
@@ -185,9 +185,11 @@
                         <div class="bg-secondary rounded h-100 p-4">
                             <h6 class="mb-4">Clienti</h6>
                             <table class="table table-striped">
+                                <form action=dashboard method="post">
                                 <thead>
                                     <tr>
                                         <th scope="col">#</th>
+                                        <th scope="col"># Angajat</th>
                                         <th scope="col">Username</th>
                                         <th scope="col">Nume</th>
                                         <th scope="col">Prenume</th>
@@ -199,6 +201,7 @@
                                 <tbody>
                                     <tr>
                                         <th scope="row">{{client['clientid']}}</th>
+                                        <td><input type="text" style="width: 30px"  id="email", name = {{client['clientid']}}></td>
                                         <td>{{client['accountname']}}</td>
                                         <td>{{client['surname']}}</td>
                                         <td>{{client['name']}}</td>
@@ -207,6 +210,8 @@
                                     </tr>
                                 </tbody>
                                 {%endfor%}
+                                <button type="submit" class="btn btn-primary ms-2">Add</button>
+                                </form>
                             </table>
                         </div>
                     </div>

@@ -55,6 +55,7 @@ table clients;
 table organisation;
 table projects;
 table technologies;
+table employee;
 
 
 select DISTINCT 
