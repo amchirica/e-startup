@@ -9,92 +9,112 @@
         crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed|Roboto+Slab" rel="stylesheet">
     <link rel="stylesheet" href="/static/style.css">
-    <link rel="stylesheet" href="/static/style_login.css">
+    <link rel="stylesheet" href="/static/style_register.css">
     <!-- Favicon -->
     <link href="/static/img/favicon.ico" rel="icon">
     <title>E-Startup Design</title>
 </head>
 
 <body>
-
     <div id="slideout-menu">
         <ul>
-            <li>{%if session['loggedin'] == False%}
-                <a href="login">Contact</a>
-                {%else%}
-                <a href="user"> {{session['name']}}</a>
-                {%endif%}
-            </li>
+
             <li>
                 <a href="home">Home</a>
             </li>
             <li>
-                <input type="text" placeholder="Search Here">
+                <a href="blog">Blog</a>
+            </li>
+            <li>
+                <a href="project">Projects</a>
+            </li>
+            <li>
+                <a href="about">About</a>
+            </li>
+            <li>  {%if session['loggedin'] == True%}
+                {%else%}
+                <a href="register">Register</a>
+                {%endif%}
             </li>
         </ul>
     </div>
 
-  <nav>
-      <div id="logo-img">
-        <a href="home">
-            <br><br>
-            <img src="/static/img/logo_prim1.png">
-        </a>
-      </div>
-      <div id="menu-icon">
-          <i class="fas fa-bars"></i>
-      </div>
-      <ul>
-        <li>{%if session['loggedin'] == False%}
-            <a href="login">Contact</a>
-            {%else%}
-            <a href="user"> {{session['name']}}</a>
-            {%endif%}
-        </li>
-          <li>
-            <a href="home">Home</a>
-        </li>
-          <li>
-              <div id="search-icon">
-                  <i class="fas fa-search"></i>
-              </div>
-          </li>
-      </ul>
-  </nav>
+    <nav>
+        <div id="logo-img">
+            <a href="home">
+                <br><br>
+                <img src="/static/img/logo_prim1.png">
+            </a>
+        </div>
+        <div id="menu-icon">
+            <i class="fas fa-bars"></i>
+        </div>
+        <ul>
+
+            <li>
+                <a href="home">Home</a>
+            </li>
+            <li>
+                <a href="blog">Blog</a>
+            </li>
+            <li>
+                <a href="project">Projects</a>
+            </li>
+            <li>
+                <a href="about">About</a>
+            </li>
+            <li>  {%if session['loggedin'] == True%}
+                {%else%}
+                <a href="register">Register</a>
+                {%endif%}
+            </li>
+
+            <li>
+                <div id="search-icon">
+                    <i class="fas fa-search"></i>
+                </div>
+            </li>
+        </ul>
+    </nav>
 
     <div id="searchbox">
         <input type="text" placeholder="Search Here">
     </div>
 
-
     <body>
-        <form action=login method="post">
-                <div class="field-name">
-                     <i class="fas fa-user"></i>
-                     <input autocomplete="off" type="text" placeholder="Username" id="username" name = "username" required>
-                     <i class="fas fa-arrow-down"></i>
-                 </div>
-                 <div class="field-email innactive">
-                     <i class="fas fa-mail-bulk"></i>
-                     <input autocomplete="off" type="email" placeholder="Email" id="email" name="email" required>
-                     <i class="fas fa-arrow-down"></i>
-                 </div>
-                 <div class="field-password innactive">
-                     <i class="fas fa-key"></i>
-                     <input autocomplete="off" type="password" placeholder="Password" id="password" name="password" required>
-                     <i class="fas fa-arrow-down"></i>
-                 </div>
-                 <div class="field-finish innactive">
-                     <i class="fas fa-kiss-wink-heart"></i>
-                     <p>Thanks for using</p>
-                     <i class="fas fa-kiss-wink-heart"></i>
-                     <button type="submit" class="btn btn-primary">Login</button>
-                 </div>
+        <header>
+            <h1>E-Startup Design</h1>
+        </header>
 
-         </form>
-     
-         <script src="/static/script_login.js"></script>
-     </body>
+            <section class="intro">
+                <h2>Login</h2>
+            </section>
+            <div class="container">
+            <form action=login method="post">
+                <!-- Register -->
+                <fieldset>
+                    <legend>Login</legend>
+                    <div class="form-box">
+
+                        <!-- Surname -->
+                            <label for="accountName">Account Name</label>
+                            <input required type="text" id="accountName" name="username" placeholder="Required"><br>
+                        </div>
+                    <div class="form-box">
+                        <!-- Email Address -->
+                        <label for="password">Parola</label>
+                        <input required type="password" id="password" name="password" placeholder="Required"><br>
+                    </div>
+                    <button type="submit">Sign Up</button>
+                </fieldset>
+                
+            </form>
+            <p style="margin-bottom:10px">© 2023 Acest site este dezvoltat de E-Startup Design.</p>
+        </div>
+    </body>
+        
+
+    <script src="/static/main.js"></script>
 </body>
 
 </html>

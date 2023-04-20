@@ -42,7 +42,6 @@ def contact():
 def login():
 
     if request.method == 'POST' and 'username' in request.form and 'password' in request.form:
-        email = request.form['email']
         password = request.form['password']
         username = request.form["username"]
         cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
